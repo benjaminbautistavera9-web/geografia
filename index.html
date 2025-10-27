@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mina Veladero - San Juan, Argentina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/2/26/Veladero_Mine_-_Argentina.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+.overlay {
+  backdrop-filter: blur(6px) brightness(0.9);
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  color: #fff;
+  background: rgba(26, 77, 143, 0.85);
+  padding: 40px 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  margin-bottom: 40px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  color: #1a4d8f;
+  border-left: 6px solid #1a4d8f;
+  padding-left: 10px;
+}
+
+p { text-align: justify; margin-bottom: 15px; }
+
+button {
+  display: block;
+  margin: 25px auto 0;
+  background-color: #1a4d8f;
+  color: white;
+  border: none;
+  padding: 14px 35px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #163b6b;
+  transform: scale(1.05);
+}
+
+.pregunta {
+  background: #f2f6fa;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border-left: 5px solid #1a4d8f;
+  transition: transform 0.2s ease;
+}
+
+.pregunta:hover { transform: scale(1.02); background: #e8f1ff; }
+
+label { margin-right: 15px; cursor: pointer; }
+
+.resultado {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.barra {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 18px;
+  margin-top: 10px;
+}
+
+.progreso {
+  height: 100%;
+  width: 0%;
+  background-color: #1a4d8f;
+  transition: width 0.5s ease-in-out;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(26,77,143,0.85);
+  color: white;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <header>
+      <h1>Mina Veladero - San Juan, Argentina</h1>
+      <p>Una mirada a su importancia, impactos y desafíos ambientales</p>
+    </header>
+
+```
+<main>
+  <!-- Sección de información -->
+  <section id="informacion">
+    <h2>Información general</h2>
+    <p>
+      Veladero es una gran mina de oro y plata a cielo abierto ubicada en la provincia de San Juan, Argentina, 
+      en la cordillera de los Andes. Operada por la empresa conjunta <strong>Barrick-Shandong</strong>, 
+      es la mina más grande del país en producción y un motor de desarrollo económico para la provincia.
+    </p>
+    <p>
+      La mina funciona desde 2005 y se encuentra a gran altitud (entre 4,000 y 4,850 metros sobre el nivel del mar).
+    </p>
+    <p>
+      Sin embargo, presenta severos problemas sociales y ambientales, destacándose los derrames de soluciones tóxicas 
+      que han contaminado ríos con metales pesados y cianuro, afectando las comunidades locales que viven de la agricultura.
+    </p>
+    <p>
+      Los problemas sociales incluyen la falta de información por parte de la empresa y el gobierno, 
+      la impunidad de la empresa operadora a pesar de las infracciones, la paralización de juicios por los derrames 
+      y la tensión entre las comunidades y las autoridades, que han dificultado la lucha por justicia ambiental.
+    </p>
+    <button onclick="mostrarActividad()">Continuar a la actividad ➜</button>
+  </section>
+
+  <!-- Sección de actividad -->
+  <section id="actividad" style="display:none;">
+    <h2>Actividad: Verdadero o Falso</h2>
+
+    <div class="pregunta">
+      <p>1. La mina Veladero se encuentra en la provincia de Mendoza.</p>
+      <label><input type="radio" name="p1" value="falso"> Falso</label>
+      <label><input type="radio" name="p1" value="verdadero"> Verdadero</label>
+    </div>
+
+    <div class="pregunta">
+      <p>2. La mina comenzó a operar en el año 2005.</p>
+      <label><input type="radio" name="p2" value="verdadero"> Verdadero</label>
+      <label><input type="radio" name="p2" value="falso"> Falso</label>
+    </div>
+
+    <div class="pregunta">
+      <p>3. Veladero no ha tenido problemas ambientales desde su apertura.</p>
+      <label><input type="radio" name="p3" value="falso"> Falso</label>
+      <label><input type="radio" name="p3" value="verdadero"> Verdadero</label>
+    </div>
+
+    <div class="pregunta">
+      <p>4. La mina está ubicada a más de 4,000 metros sobre el nivel del mar.</p>
+      <label><input type="radio" name="p4" value="verdadero"> Verdadero</label>
+      <label><input type="radio" name="p4" value="falso"> Falso</label>
+    </div>
+
+    <div class="pregunta">
+      <p>5. La empresa operadora siempre ha sido transparente con la información sobre los derrames.</p>
+      <label><input type="radio" name="p5" value="falso"> Falso</label>
+      <label><input type="radio" name="p5" value="verdadero"> Verdadero</label>
+    </div>
+
+    <button onclick="corregir()">Corregir respuestas</button>
+    <div class="resultado" id="resultado"></div>
+    <div class="barra"><div class="progreso" id="progreso"></div></div>
+  </section>
+</main>
+
+<footer>
+  © 2025 Actividad educativa sobre la Mina Veladero
+</footer>
+```
+
+  </div>
+
+  <script>
+    function mostrarActividad() {
+      document.getElementById('informacion').style.display = 'none';
+      document.getElementById('actividad').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function corregir() {
+      const respuestasCorrectas = {
+        p1: 'falso',
+        p2: 'verdadero',
+        p3: 'falso',
+        p4: 'verdadero',
+        p5: 'falso'
+      };
+
+      let puntaje = 0;
+      for (let p in respuestasCorrectas) {
+        const seleccionada = document.querySelector(`input[name="${p}"]:checked`);
+        if (seleccionada && seleccionada.value === respuestasCorrectas[p]) {
+          puntaje++;
+        }
+      }
+
+      const total = Object.keys(respuestasCorrectas).length;
+      const resultado = document.getElementById('resultado');
+      const progreso = document.getElementById('progreso');
+      progreso.style.width = (puntaje / total * 100) + '%';
+
+      let emoji = '😐';
+      if (puntaje === total) emoji = '🏆bien ahi te ganaste un premio por tener el pelo mas duro y de tener una racha de no bañarse';
+      else if (puntaje >= 3) emoji = '😊bien ahi cornudo/a';
+      else emoji = '😢sos un burro/a';
+
+      resultado.textContent = `Tu puntaje es ${puntaje} de ${total} ${emoji}`;
+      resultado.style.color = (puntaje >= 3) ? 'green' : 'red';
+    }
+  </script>
+
+</body>
+</html>
+
